@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FreshTrack | Food Expiry & Nutrition Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="/">FreshTrack<span>.</span></a>
+    <span class="tag">SMART FOOD MANAGEMENT</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR KITCHEN, ORGANIZED</p>
+        <h1>Waste less.<br><span>Eat smarter.</span></h1>
+        <p>Track food expiry dates, keep an eye on nutrition and make better use of the food you already have.</p>
+      </div>
+      <div class="hero-mark">🥑</div>
+    </section>
+
+    <section class="stats">
+      <article><small>Total items</small><strong id="totalItems">—</strong></article>
+      <article><small>Expiring soon</small><strong id="expiringSoon">—</strong></article>
+      <article><small>Expired</small><strong id="expired">—</strong></article>
+      <article><small>Safe to use</small><strong id="safe">—</strong></article>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel">
+        <div class="section-title"><div><p class="eyebrow">INVENTORY</p><h2>Your food items</h2></div></div>
+        <div id="foodList" class="food-list"><p class="muted">Loading food items…</p></div>
+      </section>
+
+      <section class="panel add-panel">
+        <p class="eyebrow">ADD TO INVENTORY</p>
+        <h2>Track new food</h2>
+        <form id="foodForm">
+          <label>Food name<input id="name" required placeholder="e.g. Milk"></label>
+          <label>Category
+            <select id="category">
+              <option>Dairy</option><option>Fruit</option><option>Vegetable</option>
+              <option>Grains</option><option>Packaged</option><option>Other</option>
+            </select>
+          </label>
+          <label>Expiry date<input id="expiryDate" type="date" required></label>
+          <div class="two">
+            <label>Quantity<input id="quantity" type="number" min="0" value="1"></label>
+            <label>Calories / serving<input id="calories" type="number" min="0" value="0"></label>
+          </div>
+          <label>Notes<textarea id="notes" rows="2" placeholder="Optional notes"></textarea></label>
+          <button class="button" type="submit">Add food item</button>
+          <p id="formMessage" class="form-message" role="status"></p>
+        </form>
+      </section>
+    </section>
+
+    <p class="disclaimer">Academic project demo. Expiry estimates and nutrition values should be checked against product packaging.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
